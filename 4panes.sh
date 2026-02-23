@@ -15,17 +15,17 @@
 #   CMD1="htop"             → runs htop in pane 1
 #   CMD1=""                 → just opens a shell prompt in pane 1
 
-CMD1=""   # Command to run in pane 1 (top-left)    — leave "" for plain shell
-CMD2=""   # Command to run in pane 2 (top-right)   — leave "" for plain shell
-CMD3=""   # Command to run in pane 3 (bottom-left)  — leave "" for plain shell
-CMD4=""   # Command to run in pane 4 (bottom-right) — leave "" for plain shell
+CMD1="pwd"   # Command to run in pane 1 (top-left)    — leave "" for plain shell
+CMD2="pwd"   # Command to run in pane 2 (top-right)   — leave "" for plain shell
+CMD3="pwd"   # Command to run in pane 3 (bottom-left)  — leave "" for plain shell
+CMD4="pwd"   # Command to run in pane 4 (bottom-right) — leave "" for plain shell
 
 # ─────────────────────────────────────────────────────────────────────────────
 
 set -euo pipefail  # Exit on error (-e), treat unset vars as errors (-u), catch pipe failures (-o pipefail)
 
 SESSION="4panes"                                   # Name of the tmux session
-DEFAULT_DIR="$HOME/scripts-for-me/tmux-scripts"  # Fallback directory if none are given as arguments
+DEFAULT_DIR="/Users/chris/whatever"     # Fallback directory if none are given as arguments
 
 DIR1="${1:-$DEFAULT_DIR}"  # Pane 1 directory — first arg, or default if not provided
 DIR2="${2:-$DEFAULT_DIR}"  # Pane 2 directory — second arg, or default if not provided
@@ -86,3 +86,11 @@ tmux select-pane -t "$SESSION:0.0"
 
 # Finally, attach to the session so it appears in your terminal
 tmux attach-session -t "$SESSION"
+
+
+
+
+# DIR1="${1:-~/awsprojects}"
+# DIR2="${2:-~/scripts-for-me}" 
+# DIR3="${3:-~/Documents}"
+# DIR4="${4:-~}"  # Home directory
