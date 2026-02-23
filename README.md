@@ -65,3 +65,13 @@ set -g mouse on
 # Reload config with Prefix + r
 bind r source-file ~/.tmux.conf \; display "Reloaded!"
 ```
+
+
+
+
+tmux list-sessions
+
+tmux attach -t 4panes
+
+
+tmux attach
